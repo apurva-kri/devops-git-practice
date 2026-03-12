@@ -199,3 +199,5 @@ Your fork on GitHub
         ↑
    Your local machine
    ```
+ ## Task 4: Pull from GitHub
+ Eg: git pull origin master
