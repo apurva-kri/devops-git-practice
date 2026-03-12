@@ -171,3 +171,31 @@ git branch
 git branch -D feature-2
 ```
 ## Task 3: Push to GitHub
+- What is origin? - origin is the default name for the main remote repository that your local repo is connected to. When you clone a repository, Git automatically creates origin.
+-Example:
+```
+git clone https://github.com/user/project.git
+git remote -v
+you will see:
+origin  https://github.com/user/project.git (fetch)
+origin  https://github.com/user/project.git (push)
+```
+- So origin usually means:Your GitHub repository where you push your code, eg: git push origin main
+
+- What is upstream? - upstream is usually used when you fork someone else's repository.
+In this case:
+
+origin → your forked repository
+upstream → the original repository you forked from
+```
+- Example structure:
+Original repo (someone else's project)
+        ↑
+     upstream
+        ↑
+Your fork on GitHub
+        ↑
+      origin
+        ↑
+   Your local machine
+   ```
