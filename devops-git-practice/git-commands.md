@@ -199,5 +199,111 @@ Your fork on GitHub
         ↑
    Your local machine
    ```
- ## Task 4: Pull from GitHub
- Eg: git pull origin master
+  - What is the difference between git fetch and git pull?
+  - git fetch downloads the latest changes from the remote repository but does NOT modify your local working files. It only updates the remote tracking branches. Fetch means download updates only.
+  - git pull downloads changes AND immediately merges them into your current branch.
+
+## Task 5: Clone vs Fork
+- What is the difference between clone and fork?
+Clone creates a copy of a repository from GitHub (or another remote) to your local machine.
+You use it when you want to download a repository and start working on it locally.
+```
+GitHub Repository
+        │
+        │ git clone
+        ▼
+Your Local Machine
+```
+Clone = copy repo from remote → local machine
+
+- A fork creates a copy of someone else's repository in your own GitHub account.
+You usually fork a project when you do not have write access to the original repository but want to contribute.
+Forking is done on GitHub's website, not through a Git command.
+
+- When would you clone vs fork?
+Use clone when you want to work directly on a repository you have access to.
+- This is common in:
+Your own repositories
+Team/company projects
+Internal projects where you already have write permission
+```
+GitHub Repo
+      │
+      │ git clone
+      ▼
+Local Machine
+      │
+      │ commit + push
+      ▼
+Same Repository
+```
+- Use fork when you want to contribute to a repository but you do NOT have write access.
+
+This is common in:
+Open-source projects
+External repositories
+Projects owned by other organizations
+-You cannot push directly.
+So you:
+1️⃣ Fork the repository
+2️⃣ Clone your fork
+3️⃣ Push changes to your fork
+4️⃣ Create a Pull Request
+```
+Original Repo
+      │
+      │ fork
+      ▼
+Your GitHub Repo
+      │
+      │ clone
+      ▼
+Local Machine
+      │
+      │ push
+      ▼
+Your Fork
+      │
+      │ Pull Request
+      ▼
+Original Repo
+```
+- After forking, how do you keep your fork in sync with the original repo?
+To keep your fork updated with the original repository, you need to connect the original repo as upstream and pull changes from it. 
+## Step 1: Clone Your Fork
+- First, clone your fork from GitHub:
+``` git clone https://github.com/YOUR-USERNAME/repository-name.git ```
+- Step 2: Add the Original Repository as upstream
+``` git remote add upstream https://github.com/ORIGINAL-OWNER/repository-name.git ```
+-check remotes:
+``` git remote -v ```
+Example o/p- 
+``` 
+origin   https://github.com/YOUR-USERNAME/repository-name.git
+upstream https://github.com/ORIGINAL-OWNER/repository-name.git
+```
+- Step 3: Fetch Changes from the Original Repo - Download updates from the original repo:
+```git fetch upstream``` This downloads changes but does not merge them yet.
+-Step 4: Update Your Local Branch - Switch to the main branch:
+``` git switch main ``
+Merge updates from upstream:
+``` git merge upstream/main ``` Now your local repo has the latest changes.
+- Step 5: Push Updates to Your Fork - Update your fork on GitHub:
+``` git push origin main```
+- Full Sync Workflow
+```
+git fetch upstream
+git switch main
+git merge upstream/main
+git push origin main
+```
+```
+Original Repo (upstream)
+        │
+        │ fetch
+        ▼
+Local Repository
+        │
+        │ push
+        ▼
+Your Fork (origin)
