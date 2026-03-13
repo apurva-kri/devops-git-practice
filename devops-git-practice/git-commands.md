@@ -307,3 +307,5 @@ Local Repository
         │ push
         ▼
 Your Fork (origin)
+```
+# Git Reset — Hands-On
