@@ -395,5 +395,10 @@ git cherry-pick	Apply specific commit
 git reset	Move HEAD and modify history
 git revert	Undo commit safely
 ```
+IMP: git reflog is a Git command that records every change made to the HEAD pointer (the place where your current branch points). It acts like a history of your local Git actions, even if commits are deleted or branches move.
+
+git reflog lets you see where HEAD has been and helps recover lost commits. It is useful and helps recover commits after mistakes like: git reset --hard, deleted branches, wrong rebase, lost commits, overwritten history
+
+Good For Interview: ```git reflog shows the history of HEAD movements and helps recover lost commits.```
 
 
