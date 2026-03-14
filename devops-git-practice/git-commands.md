@@ -308,7 +308,7 @@ Local Repository
         ▼
 Your Fork (origin)
 ```
-# Git Reset — Hands-On
+# Git Reset — Hands-On (3 types of reset)
 - git reset --soft
 - git reset --mixed
 - git reset --hard
