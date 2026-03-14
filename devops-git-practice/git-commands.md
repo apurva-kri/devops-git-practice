@@ -311,3 +311,4 @@ Your Fork (origin)
 # Git Reset — Hands-On
 - git reset --soft
 - git reset --mixed
+- git reset --hard
