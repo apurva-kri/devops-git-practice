@@ -308,6 +308,92 @@ Local Repository
         ▼
 Your Fork (origin)
 ```
-# Git Reset — Hands-On (3 types of reset)
-- git reset --soft
-- git reset --mixed
+## Git Commands Reference (Days 22–25)
+## Git Reset — Hands-On (3 types of reset)
+## Setup & Configuration - Configure Git username and email.
+```
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+```
+- Check configuration: ``` git config --list```
+- Initialize a repository: ```git init```
+## 2. Basic Workflow
+- ``` git status```
+- Add files to staging area:
+```
+git add <file>
+git add .
+```
+- Commit changes:
+```
+git commit -m "Commit message"
+```
+- View commit history:
+```
+git log
+git log --oneline
+git log --oneline --graph
+```
+- View differences:
+```
+git diff
+git diff --staged
+```
+## 3. Branching
+- Create a new branch:
+``` git branch <branch-name>```
+- Switch branches: ``` git checkout <branch-name>```
+- Create and switch branch: ``` git checkout -b <branch-name>```
+- Using modern command:
+```
+git switch <branch-name>
+git switch -c <branch-name>
+```
+- List branches: ``` git branch```
+- Delete branch: ``` git branch -d <branch-name>```
+## 4. Remote Repository
+- Clone a repository: ``` git clone <repo-url>```
+- Check remotes: ```git remote -v```
+- Push changes: ``` git push origin <branch-name>```
+- Pull latest changes: ```git pull origin <branch-name>```
+- Fetch updates without merging: ```git fetch```
+## 5. Merging & Rebasing
+- Merge a branch: ```git merge <branch-name>``` NOTE: Fast-forward merge occurs when the target branch has no new commits.
+- Rebase branch: ``` git rebase <branch-name>```
+- Continue rebase after resolving conflict: ```git rebase --continue```
+- Abort rebase: ```git rebase --abort```
+## 6. Git Stash
+- Save work in progress: ```git stash```
+- List stashes: ```git stash list```
+- Apply stash: ```git stash apply```
+- Apply and remove stash: ```git stash pop```
+- Apply specific stash: ```git stash apply stash@{1}```
+- Delete stash: ``` git stash drop stash@{0}```
+
+## 7. Git Cherry-Pick
+- Apply a specific commit from another branch: ```git cherry-pick <commit-hash>```
+- Continue after resolving conflict: ```git cherry-pick --continue```
+- Abort cherry-pick: ```git cherry-pick --abort```
+## 8. Git Reset
+- Move HEAD to a previous commit, Soft reset (keeps staged changes): ```git reset --soft HEAD~1```
+- Mixed reset (keeps changes but unstaged): ```git reset --mixed HEAD~1```
+- Hard reset (deletes changes completely): ```git reset --hard HEAD~1```
+## 9. Git Revert
+- Undo a commit by creating a new commit: ```git revert <commit-hash>``` NOTE: This keeps commit history intact and is safe for shared repositories.
+SUMMARY:
+```
+Summary
+```
+Command	        Purpose
+git add	        Stage changes
+git commit	Save changes
+git branch	Manage branches
+git merge	Combine branches
+git rebase	Reapply commits
+git stash	Save temporary changes
+git cherry-pick	Apply specific commit
+git reset	Move HEAD and modify history
+git revert	Undo commit safely
+```
+
+
